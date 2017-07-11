@@ -5,24 +5,32 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lgyblong.com/"/>
-  <updated>2017-07-11T06:42:06.000Z</updated>
+  <updated>2017-07-11T11:21:55.000Z</updated>
   <id>http://lgyblong.com/</id>
   
   <author>
     <name>Guangyu</name>
-    
+    <email>litten225@qq.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>new</title>
-    <link href="http://lgyblong.com/2017/07/11/new/"/>
-    <id>http://lgyblong.com/2017/07/11/new/</id>
+    <title>线性布局横向填充RecyclerView条目数据 宽度限制</title>
+    <link href="http://lgyblong.com/2017/07/11/%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80%E6%A8%AA%E5%90%91%E5%A1%AB%E5%85%85RecyclerView%E6%9D%A1%E7%9B%AE%E6%95%B0%E6%8D%AE%20%E5%AE%BD%E5%BA%A6%E9%99%90%E5%88%B6%20/"/>
+    <id>http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /</id>
     <published>2017-07-11T06:42:05.000Z</published>
-    <updated>2017-07-11T06:42:06.000Z</updated>
+    <updated>2017-07-11T11:21:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>线性布局横向填充RecyclerView条目数据 宽度限制 </p>
+<pre><code>@Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {     View itemView = LayoutInflater.from(context).inflate(R.layout.item_purchase, parent, false); //        View itemView = View.inflate(context, R.layout.item_purchase, parent);     return new MinePrchaseRecyclerViewHolder(itemView); } 
+</code></pre><p>invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun </p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;线性布局横向填充RecyclerView条目数据 宽度限制 &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     
     </summary>
     

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>线性布局横向填充RecyclerView条目数据 宽度限制 | Guangyu | For world peace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="‘#575757’">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="线性布局横向填充RecyclerView条目数据 宽度限制  @Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {     View itemView = LayoutInflater.from(context).inflate(R.layout.item_purc">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性布局横向填充RecyclerView条目数据 宽度限制">
+<meta property="og:url" content="http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /index.html">
+<meta property="og:site_name" content="Guangyu">
+<meta property="og:description" content="线性布局横向填充RecyclerView条目数据 宽度限制  @Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {     View itemView = LayoutInflater.from(context).inflate(R.layout.item_purc">
+<meta property="og:updated_time" content="2017-07-11T11:21:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="线性布局横向填充RecyclerView条目数据 宽度限制">
+<meta name="twitter:description" content="线性布局横向填充RecyclerView条目数据 宽度限制  @Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {     View itemView = LayoutInflater.from(context).inflate(R.layout.item_purc">
+    
+        <link rel="alternate" type="application/atom+xml" title="Guangyu" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.10">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/123.gif)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/WechatIMG2.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Guangyu</h5>
+          <a href="mailto:liuguang_yu@163.com" title="liuguang_yu@163.com" class="mail">liuguang_yu@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/HELLOMaDong" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5600295617?refer_flag=1001030102_&is_all=1" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://music.163.com/#/user/home?id=68488483"  >
+                <i class="icon icon-lg icon-link"></i>
+                网易云音乐
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">线性布局横向填充RecyclerView条目数据 宽度限制</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">线性布局横向填充RecyclerView条目数据 宽度限制</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-07-11T06:42:05.000Z" itemprop="datePublished" class="page-time">
+  2017-07-11
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-线性布局横向填充RecyclerView条目数据 宽度限制 "
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">线性布局横向填充RecyclerView条目数据 宽度限制</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-07-11 14:42:05" datetime="2017-07-11T06:42:05.000Z"  itemprop="datePublished">2017-07-11</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>线性布局横向填充RecyclerView条目数据 宽度限制 </p>
+<pre><code>@Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {     View itemView = LayoutInflater.from(context).inflate(R.layout.item_purchase, parent, false); //        View itemView = View.inflate(context, R.layout.item_purchase, parent);     return new MinePrchaseRecyclerViewHolder(itemView); } 
+</code></pre><p>invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun </p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-07-11T11:21:55.000Z" itemprop="dateUpdated">2017-07-11 19:21:55</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /" target="_blank" rel="external">http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /</a>
+        
+    </div>
+    <footer>
+        <a href="http://lgyblong.com">
+            <img src="/img/WechatIMG2.jpeg" alt="Guangyu">
+            Guangyu
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /&title=《线性布局横向填充RecyclerView条目数据 宽度限制》 — Guangyu&pic=http://lgyblong.com/img/WechatIMG2.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /&title=《线性布局横向填充RecyclerView条目数据 宽度限制》 — Guangyu&source=For world peace" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《线性布局横向填充RecyclerView条目数据 宽度限制》 — Guangyu&url=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /&via=http://lgyblong.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/07/11/文章标题/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">文章标题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢老板~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/WechatIMG3.jpeg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/WechatIMG3.jpeg" data-alipay="/img/">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Guangyu &copy; 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /&title=《线性布局横向填充RecyclerView条目数据 宽度限制》 — Guangyu&pic=http://lgyblong.com/img/WechatIMG2.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /&title=《线性布局横向填充RecyclerView条目数据 宽度限制》 — Guangyu&source=For world peace" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《线性布局横向填充RecyclerView条目数据 宽度限制》 — Guangyu&url=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /&via=http://lgyblong.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lgyblong.com/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADIklEQVR42u3awY7iQAwE0Pn/n2avs9LCVrWDRMzLCaFM0s8catrun5/4evy6fn/z7J5ndz6eXPkbn7335x0XNjY29k3Yj5dXu4jXS28Br8uXl/Uf68TGxsZex3626MmC5vh2bcn92NjY2Nhn4TeJvXwzg42NjY19bYAlG5u2qZQ3sLCxsbG/jX0WDG0j6ayH/7rcb++lYWNjY388u339J39+y3wbGxsb+4PZj/LKg+T1W5KytispFNjY2NiL2HkAtEd25sVqi1JvkLCxsbFXsK+KjbY0+dggf1o0Erg2LbGxsbE/gD0Pnnxj0BY6/5HONj/Y2NjYm9iv65EH26T1k4x1z74/bCphY2Nj34SdREv7skm05EU8C2BsbGzsb2BPWjnzgW57z2G8YWNjYy9lJ0tsoyhf9BkjWflhOwkbGxv7Juy8kXQ2SJgE3rxM9eEebGxs7BXsvFmffM5bP5NDQm3cYmNjY+9mTxiTbcN88NCOirGxsbH3sfORarJJyEuTl+wRX8VPgo2Njb2I3TZl8gHtJK7ybcxoE4KNjY19c/YkBs6O5rQReNVh0L/ux8bGxl7Bbv/1z9s37ZYmj6h54wkbGxt7E7ttu7dhk4+Nz0o/aX5hY2Njb2W3sZRvLeYHOttG1eiEKTY2NvYN2XmotLFRd7niIDwb92JjY2NvZeft+7NQaYe4bWupbpxhY2Njr2CftYraDcbZZiM/DFT/MNjY2Njr2O2QtV3WpEztcDraGmFjY2MvYr9+XDumzUfFk2jMG1XFtgQbGxt7HftsG5CX5ip8WwJsbGzsreyz4WtbiLzdP4/SYiqCjY2NvZR9Njxog+fsyfMDPdjY2Nhb2ZMx7SROkhi76uAONjY29j72o7zaltOktZQ3+vOw/M9rsLGxsW/IHuXe+JX5066KuhqPjY2NfRN2G1rtlqMtzeQwUDFawMbGxl7HzoMhf2X7nEn41Q0sbGxs7C9mJ2FzNty9ts0UTUWwsbGxsY+aSnnjPgnOvB2GjY2NvZv97kOTyZPbgfHowBA2Njb2InY+6J0Mfc+aR/nbr/orbGxs7Fux/wAzZT7aYO6NawAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.10"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.10" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Guangyu';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '加载中...';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

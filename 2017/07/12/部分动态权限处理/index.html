@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Android RxPermissions 部分动态权限处理 | Guangyu | For world peace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="‘#575757’">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="Normal Permissions: ACCESS_LOCATION_EXTRA_COMMANDS ACCESS_NETWORK_STATE ACCESS_NOTIFICATION_POLICY ACCESS_WIFI_STATE BLUETOOTH BLUETOOTH_ADMIN BROADCAST_STICKY CHANGE_NETWORK_STATE CHANGE_WIFI_MULTI">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android RxPermissions 部分动态权限处理">
+<meta property="og:url" content="http://lgyblong.com/2017/07/12/部分动态权限处理/index.html">
+<meta property="og:site_name" content="Guangyu">
+<meta property="og:description" content="Normal Permissions: ACCESS_LOCATION_EXTRA_COMMANDS ACCESS_NETWORK_STATE ACCESS_NOTIFICATION_POLICY ACCESS_WIFI_STATE BLUETOOTH BLUETOOTH_ADMIN BROADCAST_STICKY CHANGE_NETWORK_STATE CHANGE_WIFI_MULTI">
+<meta property="og:updated_time" content="2017-07-12T15:54:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android RxPermissions 部分动态权限处理">
+<meta name="twitter:description" content="Normal Permissions: ACCESS_LOCATION_EXTRA_COMMANDS ACCESS_NETWORK_STATE ACCESS_NOTIFICATION_POLICY ACCESS_WIFI_STATE BLUETOOTH BLUETOOTH_ADMIN BROADCAST_STICKY CHANGE_NETWORK_STATE CHANGE_WIFI_MULTI">
+    
+        <link rel="alternate" type="application/atom+xml" title="Guangyu" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/123.gif)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/WechatIMG2.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Guangyu</h5>
+          <a href="mailto:liuguang_yu@163.com" title="liuguang_yu@163.com" class="mail">liuguang_yu@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/HELLOMaDong" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5600295617?refer_flag=1001030102_&is_all=1" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://music.163.com/#/user/home?id=68488483"  >
+                <i class="icon icon-lg icon-link"></i>
+                网易云音乐
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Android RxPermissions 部分动态权限处理</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Android RxPermissions 部分动态权限处理</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-07-12T03:28:05.000Z" itemprop="datePublished" class="page-time">
+  2017-07-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-部分动态权限处理"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Android RxPermissions 部分动态权限处理</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-07-12 11:28:05" datetime="2017-07-12T03:28:05.000Z"  itemprop="datePublished">2017-07-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1886620&auto=1&height=66"></iframe>
+
+<p>Normal Permissions:</p>
+<p>ACCESS_LOCATION_EXTRA_COMMANDS</p>
+<p>ACCESS_NETWORK_STATE</p>
+<p>ACCESS_NOTIFICATION_POLICY</p>
+<p>ACCESS_WIFI_STATE</p>
+<p>BLUETOOTH</p>
+<p>BLUETOOTH_ADMIN</p>
+<p>BROADCAST_STICKY</p>
+<p>CHANGE_NETWORK_STATE</p>
+<p>CHANGE_WIFI_MULTICAST_STATE</p>
+<p>CHANGE_WIFI_STATE</p>
+<p>DISABLE_KEYGUARD</p>
+<p>EXPAND_STATUS_BAR</p>
+<p>GET_PACKAGE_SIZE</p>
+<p>INSTALL_SHORTCUT</p>
+<p>INTERNET</p>
+<p>KILL_BACKGROUND_PROCESSES</p>
+<p>MODIFY_AUDIO_SETTINGS</p>
+<p>NFC</p>
+<p>READ_SYNC_SETTINGS</p>
+<p>READ_SYNC_STATS</p>
+<p>RECEIVE_BOOT_COMPLETED</p>
+<p>REORDER_TASKS</p>
+<p>REQUEST_INSTALL_PACKAGES</p>
+<p>SET_ALARM</p>
+<p>SET_TIME_ZONE</p>
+<p>SET_WALLPAPER</p>
+<p>SET_WALLPAPER_HINTS</p>
+<p>TRANSMIT_IR</p>
+<p>UNINSTALL_SHORTCUT</p>
+<p>USE_FINGERPRINT</p>
+<p>VIBRATE</p>
+<p>WAKE_LOCK</p>
+<p>WRITE_SYNC_SETTINGS</p>
+<p>Dangerous Permissions:</p>
+<p> group:android.permission-group.CONTACTS<br>    permission:android.permission.WRITE_CONTACTS<br>    permission:android.permission.GET_ACCOUNTS<br>    permission:android.permission.READ_CONTACTS</p>
+<p>  group:android.permission-group.PHONE<br>    permission:android.permission.READ_CALL_LOG<br>    permission:android.permission.READ_PHONE_STATE<br>    permission:android.permission.CALL_PHONE<br>    permission:android.permission.WRITE_CALL_LOG<br>    permission:android.permission.USE_SIP<br>    permission:android.permission.PROCESS_OUTGOING_CALLS<br>    permission:com.android.voicemail.permission.ADD_VOICEMAIL</p>
+<p>  group:android.permission-group.CALENDAR<br>    permission:android.permission.READ_CALENDAR<br>    permission:android.permission.WRITE_CALENDAR</p>
+<p>  group:android.permission-group.CAMERA<br>    permission:android.permission.CAMERA</p>
+<p>  group:android.permission-group.SENSORS<br>    permission:android.permission.BODY_SENSORS</p>
+<p>  group:android.permission-group.LOCATION<br>    permission:android.permission.ACCESS_FINE_LOCATION<br>    permission:android.permission.ACCESS_COARSE_LOCATION</p>
+<p>  group:android.permission-group.STORAGE<br>    permission:android.permission.READ_EXTERNAL_STORAGE<br>    permission:android.permission.WRITE_EXTERNAL_STORAGE</p>
+<p>  group:android.permission-group.MICROPHONE<br>    permission:android.permission.RECORD_AUDIO</p>
+<p>  group:android.permission-group.SMS<br>    permission:android.permission.READ_SMS<br>    permission:android.permission.RECEIVE_WAP_PUSH<br>    permission:android.permission.RECEIVE_MMS<br>    permission:android.permission.RECEIVE_SMS<br>    permission:android.permission.SEND_SMS<br>    permission:android.permission.READ_CELL_BROADCASTS</p>
+<pre><code>—————————————————————————————————————
+</code></pre><p>  导入依赖 ：<br>    compile ‘com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar’</p>
+<p>/**</p>
+<ul>
+<li>Created by lgy on 2017/7/10.</li>
+<li>RxPermissionsUtil 动态权限申请<br>*/</li>
+</ul>
+<p>public class RxPermissionsUtil {<br>    public static RxPermissions rxPermission;</p>
+<pre><code>private static RxPermissions getInstance(Activity activity) {
+    if (rxPermission == null) {
+        if (rxPermission == null)
+            rxPermission = new RxPermissions(activity);
+    }
+    return rxPermission;
+}
+
+public static void isRxPermission(Activity activity) {
+    getInstance(activity)
+            .request(getPermission())
+            .subscribe(new Action1&lt;Boolean&gt;() {
+                @Override
+                public void call(Boolean aBoolean) {
+                    if (aBoolean) {
+                        // 所有权限请求被同意
+                        //TODO
+                    } else {
+                        // 至少有一个权限没同意
+                    }
+                }
+            });
+}
+
+public static void requestPermissions(Activity activity) {
+    getInstance(activity)
+            .requestEach(getPermission())
+            .subscribe(new Action1&lt;Permission&gt;() {
+                @Override
+                public void call(Permission permission) {
+                    if (permission.granted) {
+                        // 用户已经同意该权限
+                        Log.d(&quot;permissions&quot;, permission.name + &quot; is granted.&quot;);
+                    } else if (permission.shouldShowRequestPermissionRationale) {
+                        // 用户拒绝了该权限，没有选中『不再询问』（Never ask again）,那么下次再次启动时，还会提示请求权限的对话框
+                        Log.d(&quot;permissions&quot;, permission.name + &quot; is denied. More info should be provided.&quot;);
+                    } else {
+                        ToastUtils.showLongToast(&quot;请手动配置权限&quot;);
+                        // 用户拒绝了该权限，并且选中『不再询问』
+                        Log.d(&quot;permissions&quot;, permission.name + &quot; is denied.&quot;);
+                    }
+                }
+            });
+
+
+}
+
+@NonNull
+private static String[] getPermissions() {
+    return new String[]{
+            Manifest.permission.SEND_SMS,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.READ_CALENDAR,
+            Manifest.permission.READ_CALL_LOG,
+            Manifest.permission.READ_CONTACTS,
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.READ_SMS,
+            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.CAMERA,
+            Manifest.permission.CALL_PHONE,
+    };
+}
+
+@NonNull
+private static String[] getPermission() {
+    return new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,    //允许程序读外部存储，如SD卡上写文件
+            Manifest.permission.WRITE_SETTINGS,    //写入
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,    //允许程序写入外部存储，如SD卡上写文件
+            Manifest.permission.CAMERA    //拍照
+    };
+}
+</code></pre><p>}</p>
+<pre><code>权限判断
+</code></pre><p> if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE)<br>                == PackageManager.PERMISSION_GRANTED &amp;&amp; ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)<br>                == PackageManager.PERMISSION_GRANTED) {<br>已有权限。。。<br>} else {<br>            RxPermissionsUtil.requestPermissions(this);<br>        }</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-07-12T15:54:12.000Z" itemprop="dateUpdated">2017-07-12 23:54:12</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/07/12/部分动态权限处理/" target="_blank" rel="external">http://lgyblong.com/2017/07/12/部分动态权限处理/</a>
+        
+    </div>
+    <footer>
+        <a href="http://lgyblong.com">
+            <img src="/img/WechatIMG2.jpeg" alt="Guangyu">
+            Guangyu
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lgyblong.com/2017/07/12/部分动态权限处理/&title=《Android RxPermissions 部分动态权限处理》 — Guangyu&pic=http://lgyblong.com/img/WechatIMG2.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lgyblong.com/2017/07/12/部分动态权限处理/&title=《Android RxPermissions 部分动态权限处理》 — Guangyu&source=For world peace" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lgyblong.com/2017/07/12/部分动态权限处理/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android RxPermissions 部分动态权限处理》 — Guangyu&url=http://lgyblong.com/2017/07/12/部分动态权限处理/&via=http://lgyblong.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lgyblong.com/2017/07/12/部分动态权限处理/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/07/12/Edittext动态监听字符/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android Edittext动态监听字符</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/07/11/线性布局横向填充RecyclerView条目数据 宽度限制 /" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">线性布局横向填充RecyclerView条目数据 宽度限制</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢老板~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/WechatIMG3.jpeg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/WechatIMG3.jpeg" data-alipay="/img/">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Guangyu &copy; 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lgyblong.com/2017/07/12/部分动态权限处理/&title=《Android RxPermissions 部分动态权限处理》 — Guangyu&pic=http://lgyblong.com/img/WechatIMG2.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lgyblong.com/2017/07/12/部分动态权限处理/&title=《Android RxPermissions 部分动态权限处理》 — Guangyu&source=For world peace" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lgyblong.com/2017/07/12/部分动态权限处理/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android RxPermissions 部分动态权限处理》 — Guangyu&url=http://lgyblong.com/2017/07/12/部分动态权限处理/&via=http://lgyblong.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lgyblong.com/2017/07/12/部分动态权限处理/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHklEQVR42u3aQW6FMAwFQO5/abqtVAHPcahEMll9fUFgWFh27OOI1/lnVa//fVfy//HGwsDA+CzjvF1jjOqHyJ97+Q4YGBgbMK4efHVN9a4ksF4x7p+CgYGBMfb7fp+ch4GBgdFhJCVoJx3EwMDAGCti77fOk8j7Yvj1WhwDA+ODjPyw7P9/v9LfwMDA+BTjLK5qCpgUpXl4vXwrDAyMpRl5gOsf5c8NuBgYGPswOqF2LFBWW5v3n+/oPB4DA+MjjHx4qz9CUW0wtIIyBgbGQoy8pOwcyeXXVxNNDAyMHRjJSMQYOx+z6D8FAwNjT8aEIa04iOch/uFDY2BgLM3o3JCE1Dzgju2DgYGxNiMJoHmIrF5TTTEvd8PAwFiaUW0c5iddeSCeFXwxMDBWZYw1HfNP0BnayEkYGBg7MJLj+DxN7JS7E4YtMDAwNmBU08Q3JtTKLVUMDIwNGLNCbbWd0C+YW30GDAyMjzDKo1fFQnduOhj1YDEwMBZldIYhotmNuEhu7YmBgbEBIykpq5hqU7PaHMXAwNiTUQ2C/bGMsfD6MDOCgYGxEOMsrrlHb2OjGBgYGLsx8pWkd2MNgM5QGgYGxj6MPMhWX7SDL6ePGBgYGzCqTcq87ExCarUMxsDAwHgluxxKRgtHexgYGBjFofzqkdxYG/VhZgQDA2M5Rt4M6LOrh27RPhgYGEszWqVjMZWc9ZkGE1YMDIzvMX4A6GgD8bXwvD4AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Guangyu';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '加载中...';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

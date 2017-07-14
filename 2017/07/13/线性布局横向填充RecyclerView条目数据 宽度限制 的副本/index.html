@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>recyle soft; | Guangyu | For world peace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="‘#575757’">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="public void recyleSoft() {         boolean active = ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))                 .isActive();          if (active) {             ((InputMethodManager)">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="recyle soft;">
+<meta property="og:url" content="http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/index.html">
+<meta property="og:site_name" content="Guangyu">
+<meta property="og:description" content="public void recyleSoft() {         boolean active = ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))                 .isActive();          if (active) {             ((InputMethodManager)">
+<meta property="og:updated_time" content="2017-07-13T07:31:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="recyle soft;">
+<meta name="twitter:description" content="public void recyleSoft() {         boolean active = ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))                 .isActive();          if (active) {             ((InputMethodManager)">
+    
+        <link rel="alternate" type="application/atom+xml" title="Guangyu" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/123.gif)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/WechatIMG2.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Guangyu</h5>
+          <a href="mailto:liuguang_yu@163.com" title="liuguang_yu@163.com" class="mail">liuguang_yu@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/HELLOMaDong" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5600295617?refer_flag=1001030102_&is_all=1" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://music.163.com/#/user/home?id=68488483"  >
+                <i class="icon icon-lg icon-link"></i>
+                网易云音乐
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">recyle soft;</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">recyle soft;</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-07-13T07:31:05.000Z" itemprop="datePublished" class="page-time">
+  2017-07-13
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-线性布局横向填充RecyclerView条目数据 宽度限制 的副本"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">recyle soft;</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-07-13 15:31:05" datetime="2017-07-13T07:31:05.000Z"  itemprop="datePublished">2017-07-13</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <pre><code>public void recyleSoft() {
+        boolean active = ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+                .isActive();
+
+        if (active) {
+            ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+                    .hideSoftInputFromWindow(
+                            getCurrentFocus().getWindowToken(),
+                            InputMethodManager.HIDE_NOT_ALWAYS);
+        }
+    }
+</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-07-13T07:31:54.000Z" itemprop="dateUpdated">2017-07-13 15:31:54</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/" target="_blank" rel="external">http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/</a>
+        
+    </div>
+    <footer>
+        <a href="http://lgyblong.com">
+            <img src="/img/WechatIMG2.jpeg" alt="Guangyu">
+            Guangyu
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/&title=《recyle soft;》 — Guangyu&pic=http://lgyblong.com/img/WechatIMG2.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/&title=《recyle soft;》 — Guangyu&source=For world peace" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《recyle soft;》 — Guangyu&url=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/&via=http://lgyblong.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/07/13/点击空白处隐藏键盘/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">点击空白处隐藏键盘</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/07/12/Edittext动态监听字符/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android Edittext动态监听字符</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢老板~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/WechatIMG3.jpeg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/WechatIMG3.jpeg" data-alipay="/img/">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Guangyu &copy; 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/&title=《recyle soft;》 — Guangyu&pic=http://lgyblong.com/img/WechatIMG2.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/&title=《recyle soft;》 — Guangyu&source=For world peace" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《recyle soft;》 — Guangyu&url=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/&via=http://lgyblong.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lgyblong.com/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADLklEQVR42u3a0YrjQAwEwPz/T/uel8NOS3LAUcpPIZjJlA3bK2ler/g6Tq7re+5d5/r+1ycubGxs7C9hH5dXfs//m7j+nADy1ar7xMbGxt7HPvsLf/35mpEkSO+efG+n32NjY2P/MPuMekOoxCtfBy02NjY29qSQSLaS4KuPEhsbGxs7D4aElBcJ1VLk+gV8pJeGjY2N/Xh29eef/Pkj821sbGzsB7OP4lU9UlNtJOW7GimwsbGxF7GrA9deuZIXEnl8VssMbGxs7N3samxUG0nVQUIekOWRQK8swcbGxn48u7f0XQODebmSvEJsbGzsrez80EzvZ6rIeThFYYmNjY29iF0Nkl7MlBO1eGeSTdjY2Nhb2b3R6aTd31uzV4qcfo+NjY29iH191KbXVOoVKkngveKrPA/BxsbGXsHOj8gkIZEje9FYbXJFJ5WwsbGxv5Y9abtXw6x3lCcJ2vwRY2NjY+9j3zXorQ5rq+2hvGkV/To2Njb2Cnbyr3z1X/xJq6haujSHDdjY2Njr2NeAvADobXGy8qgIwcbGxl7B7hUGk+IkafTnw4BqAfOmGsPGxsb+Qna1lR89uXGXKx8q9xpP2NjY2JvY5VvjltN8bFBI3d7jwMbGxl7Hzpvy1RSoFjB37eFNBGJjY2P/DLsaGL0jODn1eoXCo8HGxsZewc6Hr3d90xsPT17JaXRhY2NjL2JPCpJeoydZfzIqfhOQ2NjY2EvZeQOoNwCYj4onD/rPZ2xsbOxF7OqYdt6gr5YxSWTmR3awsbGxd7N77aG7fr5XnFQfATY2NvZWdnVzeZz0ipzq4ZvyYR1sbGzsH2AfwTUJnrsaWKP1sbGxsdex7xr0Vlv/8yFE81ewsbGxV7CP4pWHyicO7kwGD6fvGRsbG/vL2b0AqI5p8+DpjWl7R4iwsbGxN7F7oZWXK9XgqZYfzXWwsbGx17HzYOiVDb1Sofp94WAQNjY29g+zkzZNtXTJx7S9l9Q8qYSNjY29lN0bBlSLlmRv1UbVzbmNjY2N/TB20lSaHNnpDRjm5ccN4wFsbGzsx7PzQW8+oJ2MhPOhQr7n5sEdbGxs7Kez/wGszhYRlOXR2QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Guangyu';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '加载中...';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

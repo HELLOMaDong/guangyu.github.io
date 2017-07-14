@@ -27,7 +27,7 @@
 <meta property="og:url" content="http://lgyblong.com/2017/07/12/Edittext动态监听字符/index.html">
 <meta property="og:site_name" content="Guangyu">
 <meta property="og:description" content="&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;RelativeLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; android:layout_width=&amp;quot;fill_parent&amp;quot;">
-<meta property="og:updated_time" content="2017-07-12T15:58:07.000Z">
+<meta property="og:updated_time" content="2017-07-14T03:44:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Edittext动态监听字符">
 <meta name="twitter:description" content="&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;RelativeLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; android:layout_width=&amp;quot;fill_parent&amp;quot;">
@@ -462,19 +462,26 @@ android:background=&quot;@color/contentbg&quot;&gt;
             private int editEnd;//光标结束位置
             private final int charMaxNum = 140;
             private final Boolean DEBUG = true;
+     private int temps;
 
             //                    Log.i(TAG, &quot;输入文本之前的状态&quot;);
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 if (DEBUG)
-                    temp = s;
+                    temp = temp = s.toString().trim();
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (DEBUG)
 //                    Log.i(TAG, &quot;输入文字中的状态，count是一次性输入字符数&quot;);
-                    mTvAvailableCharNum.setText(s.length() + &quot; / 140&quot;);
+                    mTvAvailableCharNum.setText(s.toString().trim().length() + &quot; / 140&quot;);
+         temps = s.toString().length();
+            if (temps != charMaxNum) {
+                mTvAvailableCharNum.setTextColor(Color.rgb(192, 192, 192));
+            } else {
+                mTvAvailableCharNum.setTextColor(Color.rgb(242, 115, 28));
+            }
             }
 
             @Override
@@ -495,14 +502,26 @@ android:background=&quot;@color/contentbg&quot;&gt;
             }
 
         });
-</code></pre>
+</code></pre><hr>
+<p>android EditText获取光标位置并插入字符删除字符</p>
+<p>1.获取光标位置</p>
+<p>[java]<br>    int index = editText.getSelectionStart();  </p>
+<pre><code>int index = editText.getSelectionStart();
+</code></pre><p>2.在光标处插入字符</p>
+<p>[java]<br>    int index = editText.getSelectionStart();<br>    Editable editable = editText.getText();<br>    editable.insert(index, “aaaa”);  </p>
+<pre><code>int index = editText.getSelectionStart();
+Editable editable = editText.getText();
+editable.insert(index, &quot;aaaa&quot;);3.删除光标前字符
+</code></pre><p>[java]<br>    int index = editText.getSelectionStart();<br>    Editable editable = editText.getText();<br>    editable.delete(index-1, index);  </p>
+<p>int index = editText.getSelectionStart();<br>Editable editable = editText.getText();<br>editable.delete(index-1, index); </p>
+
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-07-12T15:58:07.000Z" itemprop="dateUpdated">2017-07-12 23:58:07</time>
+    最后更新时间：<time datetime="2017-07-14T03:44:20.000Z" itemprop="dateUpdated">2017-07-14 11:44:20</time>
 </span><br>
 
 
@@ -582,7 +601,14 @@ android:background=&quot;@color/contentbg&quot;&gt;
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/07/13/线性布局横向填充RecyclerView条目数据 宽度限制 的副本/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">recyle soft;</h4>
+      </a>
+    </div>
   
 
   
